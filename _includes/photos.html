@@ -1,0 +1,21 @@
+<div>
+  {% for image in site.data.dominant_colors %}
+  {% assign color = image.dominant_color %}
+    {% if forloop.first %}
+      <div style="background-image: linear-gradient(dodgerblue, {{ color }}); height: 100vh; width: 100vw;"></div>
+    {% endif %}
+
+    {% if forloop.first != true %}
+      {% assign previousIndex = forloop.index | minus: 2 %}
+      {% assign previousColor = site.data.dominant_colors[previousIndex].dominant_color %}
+      <div style="background-image: linear-gradient({{previousColor}}, {{ color }}); height: 200vh; width: 100vw;"></div>
+    {% endif %}
+
+    <div class="image-container" style="background-color: {{ color }};">
+      <img src="/uploads/photos/{{image.filename}}" alt="image" class="image" />
+    </div>
+    {% if forloop.last %}
+      <div style="background-image: linear-gradient({{ color }}, dodgerblue); height: 100vh; width: 100vw;"></div>
+    {% endif %}
+  {% endfor %}
+</div>

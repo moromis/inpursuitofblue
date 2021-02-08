@@ -1,0 +1,23 @@
+{
+  "name": "moromis.com-2020",
+  "version": "1.0.0",
+  "description": "A new version of my website, to be hosted on Github Pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moromis/moromis.com-2020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moromis/moromis.com-2020/issues"
+  },
+  "homepage": "https://github.com/moromis/moromis.com-2020#readme",
+  "dependencies": {
+    "colorthief": "^2.3.2",
+    "fs": "0.0.1-security"
+  }
+}

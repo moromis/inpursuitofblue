@@ -1,0 +1,18 @@
+[
+  {
+    "filename": "shirt.jpg",
+    "dominant_color": "#2F537F"
+  },
+  {
+    "filename": "wheelbarrow.jpg",
+    "dominant_color": "#3F74BE"
+  },
+  {
+    "filename": "beach.jpg",
+    "dominant_color": "#2F537F"
+  },
+  {
+    "filename": "van.jpg",
+    "dominant_color": "#5C7DA3"
+  }
+]
