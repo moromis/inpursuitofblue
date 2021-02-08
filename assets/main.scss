@@ -4,3 +4,25 @@
 @import 'minima';
 @import 'bootstrap/bootstrap';
 @import 'custom';
+
+// Overrides
+html {
+  scroll-snap-stop: always;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  background: {{site.background_color}};
+}
+
+a, p, h1, h2, h3, h4, h5, h6 {
+  color: white !important;
+}
+
+.navbar {
+  background: {{site.background_color}};
+}
+
+.site-title {
+  margin-left: 24px;
+}

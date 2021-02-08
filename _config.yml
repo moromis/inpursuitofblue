@@ -23,6 +23,7 @@ title: In Pursuit of Blue
 email: themoromis@gmail.com
 baseurl: '' # the subpath of your site, e.g. /blog
 url: 'https://inpursuitof.blue' # the base hostname & protocol for your site, e.g. http://example.com
+background_color: '#1E90FF'
 twitter_username: TheMoromis
 github_username: moromis
 
