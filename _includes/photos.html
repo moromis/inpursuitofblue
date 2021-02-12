@@ -1,25 +1,45 @@
-<div>
-  {% for image in site.data.dominant_colors %}
-  {% assign color = image.dominant_color %}
-    <!-- Initial div, transitions between background color and initial color -->
-    {% if forloop.first %}
-      <div style="background-color: {{site.background_color}}; height: 100vh; width: 100vw;"></div>
-      <div style="background-image: linear-gradient({{site.background_color}}, {{ color }}); height: 100vh; width: 100vw;"></div>
-    {% endif %}
-
-    <!-- Transition Div -->
-    {% if forloop.first != true %}
-      {% assign previousIndex = forloop.index | minus: 2 %}
-      {% assign previousColor = site.data.dominant_colors[previousIndex].dominant_color %}
-      <div style="background-image: linear-gradient({{previousColor}}, {{ color }}); height: 200vh; width: 100vw;"></div>
-    {% endif %}
-
-    <div class="image-container" style="background-color: {{ color }};">
-      <img src="/uploads/photos/{{image.filename}}" alt="image" class="image" />
-    </div>
-    {% if forloop.last %}
-      <div style="background-image: linear-gradient({{ color }}, {{site.background_color}}); height: 100vh; width: 100vw;"></div>
-      <div style="background-color: {{site.background_color}}; height: 100vh; width: 100vw;"></div>
-    {% endif %}
+<div id="photos">
+  <div style="background-color: {{site.background_color}}; height: 100vh; width: 100vw;"></div>
+  <div id="gradient" style="height: 100vh; width: 100vw"></div>
+  {% assign images = site.static_files | where_exp: "image", "image.path contains 'uploads/photos'" %}
+  {% for image in images %}
+      <div class="image-container" style="background-color: {{ color }};">
+        <img alt="image" class="image" src="{{image.path}}"/>
+      </div>
+      {% if forloop.last == false %}
+        <div id="gradient" style="height: 200vh; width: 100vw"></div>
+      {% endif %}
   {% endfor %}
+  <div id="post-gradient" style="height: 100vh; width: 100vw"></div>
+  <div style="background-color: {{site.background_color}}; height: 100vh; width: 100vw;"></div>
 </div>
+
+<script>
+  window.onload = () => {
+    const imageContainers = document.querySelectorAll('.image-container');
+    const gradients = document.querySelectorAll('#gradient');
+
+    let previousColor = '{{site.background_color}}';
+
+    imageContainers.forEach((item, i) => {
+      const image = item.children[0];
+      Vibrant.from(image.currentSrc).getPalette((err, palette) => {
+        if (!err) {
+          const color = `rgb(${palette.Vibrant.getRgb()})`;
+          item.style.backgroundColor = color;
+          const gradient = `linear-gradient(${previousColor}, ${color})`;
+          gradients[i].style.backgroundImage = gradient;
+          if (i === imageContainers.length - 1) {
+            const postGradient = `linear-gradient(${color}, {{site.background_color}})`;
+            const element = document.querySelector('#post-gradient');
+            document.querySelector(
+              '#post-gradient',
+            ).style.backgroundImage = postGradient;
+          }
+
+          previousColor = color;
+        }
+      });
+    });
+  };
+</script>
