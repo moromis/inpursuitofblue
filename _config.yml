@@ -60,3 +60,4 @@ sass:
 
 include:
   - node_modules/
+  - assets/js/
