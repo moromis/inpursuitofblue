@@ -13,6 +13,9 @@ html {
 
 body {
   background: {{site.background_color}};
+  @include media-query($on-palm) {
+    touch-action: none;
+  }
 }
 
 a, p, h1, h2, h3, h4, h5, h6 {
