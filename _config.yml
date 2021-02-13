@@ -26,6 +26,7 @@ url: 'https://www.inpursuitof.blue' # the base hostname & protocol for your site
 background_color: '#1E90FF'
 twitter_username: TheMoromis
 github_username: moromis
+github: [metadata]
 
 # Build settings
 theme: minima
