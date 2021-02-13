@@ -5,7 +5,5 @@
 layout: home
 ---
 
-<script src="{{ base.url | prepend: site.url }}/assets/js/vibrant.min.js"></script>
-
 {% include info.html %}
 {% include photos.html %}
