@@ -22,16 +22,16 @@
 
 .top-button {
   position: sticky;
-  top: 48px;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, calc(12.5vh - 50%));
 }
 
 .bottom-button {
   position: sticky;
-  bottom: 48px;
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, calc(-12.5vh + 25%));
 }
 
 
