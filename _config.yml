@@ -27,6 +27,7 @@ background_color: '#1E90FF'
 twitter_username: TheMoromis
 github_username: moromis
 github: [metadata]
+repository: moromis/inpursuitofblue
 
 # Build settings
 theme: minima
