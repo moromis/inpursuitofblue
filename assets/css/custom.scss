@@ -1,5 +1,5 @@
 .image-container {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -37,6 +37,8 @@
 
 @include media-query($on-palm) {
   .mobile-nav-button {
+    overflow-y: hidden;
+    user-select: none;
     background-color: inherit;
     width: 64px;
     height: 64px;
@@ -46,4 +48,8 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+.hidden {
+  display: none;
 }

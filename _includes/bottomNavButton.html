@@ -2,7 +2,7 @@
   const scrollDown = () => {
     window.scrollBy({
       left: 0,
-      top: window.innerHeight,
+      top: 2 * window.innerHeight,
       behavior: 'smooth'
     })
   }
@@ -11,3 +11,15 @@
 <div class="bottom-button mobile-nav-button" onclick="scrollDown()">
   Next
 </div>
+
+<script>
+  const checkIfAtBottom = () => {
+    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
+      document.querySelector('.bottom-button').classList.add('hidden');
+    } else {
+      document.querySelector('.bottom-button').classList.remove('hidden');
+    }
+  }
+  $(window).on('scroll', $.debounce(100, checkIfAtBottom));
+  checkIfAtBottom(); // run once on startup
+</script>

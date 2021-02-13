@@ -29,6 +29,8 @@ github_username: moromis
 github: [metadata]
 repository: moromis/inpursuitofblue
 
+host: 0.0.0.0
+
 # Build settings
 theme: minima
 plugins:

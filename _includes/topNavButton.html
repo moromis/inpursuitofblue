@@ -2,12 +2,22 @@
   const scrollUp = () => {
     window.scrollBy({
       left: 0,
-      top: -window.innerHeight,
-      behavior: 'smooth'
-    })
-  }
+      top: -2 * window.innerHeight,
+      behavior: 'smooth',
+    });
+  };
 </script>
 
-<div class="top-button mobile-nav-button" onclick="scrollUp()">
-  Prev
-</div>
+<div class="top-button mobile-nav-button" onclick="scrollUp()">Prev</div>
+
+<script>
+  const checkIfAtTop = () => {
+    if ($(window).scrollTop() + $(window).height() <= $(window).height() + 100) {
+      document.querySelector('.top-button').classList.add('hidden');
+    } else {
+      document.querySelector('.top-button').classList.remove('hidden');
+    }
+  }
+  $(window).on('scroll', $.debounce(100, checkIfAtTop));
+  checkIfAtTop(); // run once on startup
+</script>
