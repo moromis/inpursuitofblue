@@ -1,0 +1,55 @@
+.image-container {
+  scroll-snap-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  height: 50vh;
+  width: auto;
+}
+
+.info {
+  @include media-query($on-palm) {
+    display: none;
+  }
+  width: 100vw;
+  text-align: center;
+}
+
+.top-button {
+  position: sticky;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, calc(12.5vh - 50%));
+}
+
+.bottom-button {
+  position: sticky;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, calc(-12.5vh + 50%));
+}
+
+
+@include media-query($on-palm) {
+  .mobile-nav-button {
+    overflow-y: hidden;
+    user-select: none;
+    background-color: inherit;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .4); // TODO: base off of background?? or is that just transparent. Would be cool to do like a glass type effect, reflecting the color from below at the top and the color above at the bottom
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hidden {
+  display: none;
+}
