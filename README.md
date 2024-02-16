@@ -1,6 +1,6 @@
-# moromis.com-2020
+# inpursuitofblue
 
-A new version of my website, to be hosted on Github Pages
+I like the color blue
 
 # To run locally
 
